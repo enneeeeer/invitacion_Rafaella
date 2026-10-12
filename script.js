@@ -4,7 +4,7 @@
   con código de país y solo dígitos, por ejemplo: const WHATSAPP_NUMBER = "519XXXXXXXX";
   No se ha configurado ningún número porque no fue proporcionado.
 */
-const WHATSAPP_NUMBER = "51990004930";
+const WHATSAPP_NUMBER = "51907927669";
 const $ = (id) => document.getElementById(id);
 document.querySelectorAll(".character img, .bowser-big img, .invite-characters img").forEach(image=>{
   image.addEventListener("error",()=>{
