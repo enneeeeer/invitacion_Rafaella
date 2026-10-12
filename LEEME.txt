@@ -1,0 +1,17 @@
+INVITACIÓN WEB DE RAFAELLA
+
+Archivos:
+- index.html: estructura y pantallas.
+- styles.css: estilos y animaciones.
+- script.js: minijuegos e interacciones.
+
+El laberinto se genera de nuevo en cada partida en una cuadrícula de 9 × 9 y siempre incluye una ruta larga hasta el castillo.
+
+Para probarla: abre index.html en un navegador moderno.
+Para publicar y compartir por enlace, sube los archivos de la página y también la carpeta assets.
+
+Imágenes: la página usa PNG recortados y con transparencia en la carpeta assets (peach-celebrando-recortada.png, bowser-transparente.png y estrella-ui.png) para mostrar los personajes y las estrellas. Si una imagen de personaje no carga, se mostrará un emoji de reemplazo.
+
+WhatsApp: en script.js puedes configurar WHATSAPP_NUMBER con el número de contacto (código de país y solo dígitos). Se dejó vacío porque no se proporcionó.
+
+Ubicación: en index.html puedes reemplazar el enlace del botón "Abrir ubicación en Google Maps" por el enlace exacto de Google Maps del lugar. Por ahora abre una búsqueda de "Círculo Militar".

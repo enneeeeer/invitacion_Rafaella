@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7b8d2">
+<title>Rafaella y las 3 estrellas del Reino Champiñón</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="shell">
+  <header class="topline">
+    <div class="logo">🍄 REINO CHAMPIÑÓN</div>
+    <button class="sound" id="soundToggle" aria-pressed="false" title="Activar o desactivar sonidos">🔇 Sonido apagado</button>
+  </header>
+
+  <main>
+    <section class="screen hero" id="welcome">
+      <div class="kicker">Una misión real te espera</div>
+      <div class="castle-scene" aria-label="Castillo mágico con Peach y Bowser">
+        <span class="cloud c1"></span><span class="cloud c2"></span>
+        <span class="character peach"><img src="assets/peach-celebrando-recortada.png" alt="Peach saludando"><span class="character-fallback" hidden>👸🏻</span></span>
+        <span class="castle" aria-hidden="true">🏰</span>
+        <span class="character bowser"><img src="assets/bowser-transparente.png" alt="Bowser"><span class="character-fallback" hidden>🐲</span></span>
+      </div>
+      <h1>¡Rafaella necesita tu ayuda!</h1>
+      <p class="lead">Bowser ha escondido una invitación muy especial. ¿Te atreves a superar tres desafíos para encontrarla?</p>
+      <div class="actions"><button class="btn btn-primary" id="startBtn">¡Aceptar la misión! <img class="inline-star" src="assets/estrella-ui.png" alt=""></button></div>
+      <p class="note" style="margin-top:18px">Prepárate para jugar, conseguir estrellas y desbloquear una sorpresa.</p>
+    </section>
+
+    <section class="screen" id="intro" hidden>
+      <div class="panel bowser-card">
+        <div class="bowser-big"><img src="assets/bowser-transparente.png" alt="Bowser"><span class="character-fallback" hidden>🐲</span></div>
+        <div><div class="kicker">¡Alerta en el reino!</div><h2>¡Ja, ja, ja!</h2>
+          <p>He escondido la invitación de Rafaella. Si quieres recuperarla, tendrás que superar mis tres desafíos. ¡A ver si puedes!</p>
+        </div>
+      </div>
+      <p class="lead">Completa los retos y reúne las tres estrellas mágicas. ¡Peach cuenta contigo!</p>
+      <div class="actions"><button class="btn btn-secondary" id="beginGames">¡Vamos a jugar! 🎮</button></div>
+    </section>
+
+    <section class="screen" id="games" hidden>
+      <div class="kicker" id="levelKicker">Desafío 1 de 3</div>
+      <h2 id="gameTitle">Atrapa las estrellas</h2>
+      <p id="gameDescription">Toca cinco estrellas para cargarlas de magia.</p>
+      <div class="progress-wrap">
+        <div><strong>Progreso de la misión</strong><div class="note" id="progressText">0 de 3 estrellas mágicas</div></div>
+        <div class="progress" aria-label="Progreso de la misión">
+          <span class="star-slot" id="p0"><img src="assets/estrella-ui.png" alt="Estrella pendiente"></span>
+          <span class="star-slot" id="p1"><img src="assets/estrella-ui.png" alt="Estrella pendiente"></span>
+          <span class="star-slot" id="p2"><img src="assets/estrella-ui.png" alt="Estrella pendiente"></span>
+        </div>
+      </div>
+      <div class="game-card">
+        <div id="gamePrompt" class="note">¡Toca las estrellas!</div>
+        <div class="game-board" id="gameBoard"></div>
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+        <button class="btn btn-gold" id="continueBtn" hidden>Continuar →</button>
+      </div>
+      <div class="actions"><button class="btn btn-soft" id="skipBtn">Saltar juego y ver invitación</button></div>
+      <p class="note" style="text-align:center;margin-top:12px">Puedes intentarlo las veces que quieras y no hay límite de tiempo. ¡Lo importante es divertirse!</p>
+    </section>
+
+    <section class="screen hero" id="victory" hidden>
+      <div class="castle-scene" aria-label="Peach y Bowser celebran junto al castillo">
+        <span class="character peach"><img src="assets/peach-celebrando-recortada.png" alt="Peach celebrando"><span class="character-fallback" hidden>👸🏻</span></span>
+        <span class="castle" aria-hidden="true">🏰</span>
+        <span class="character bowser"><img src="assets/bowser-transparente.png" alt="Bowser"><span class="character-fallback" hidden>🐲</span></span>
+      </div>
+      <div class="kicker">Misión cumplida</div>
+      <h1>¡Lo lograste!</h1>
+      <p class="lead">¡Has conseguido las estrellas y recuperado la invitación de Rafaella! Hasta Bowser se apunta a la celebración.</p>
+      <div class="final-characters" aria-hidden="true"><img src="assets/estrella-ui.png" alt=""><img src="assets/estrella-ui.png" alt=""><img src="assets/estrella-ui.png" alt=""></div>
+      <div class="actions"><button class="btn btn-primary" id="revealBtn">Abrir invitación 💌</button></div>
+    </section>
+
+    <section class="screen" id="invitation" hidden>
+      <div class="invite">
+        <div class="invite-crown" aria-hidden="true">👑 ✨ 🍄</div>
+        <div class="kicker">Invitación real</div>
+        <h2>¡Rafaella cumple años!</h2>
+        <p class="invite-sub">El Reino Champiñón está de fiesta y queremos celebrarlo contigo.</p>
+        <div class="details">
+          <div class="detail"><span class="emoji" aria-hidden="true">📅</span><strong>FECHA</strong><span>21 de noviembre de 2026</span></div>
+          <div class="detail"><span class="emoji" aria-hidden="true">⏰</span><strong>HORA</strong><span>16:30</span></div>
+          <div class="detail"><span class="emoji" aria-hidden="true">📍</span><strong>LUGAR</strong><span>Círculo Militar de Chorrillos</span></div>
+        </div>
+        <div class="invite-extras">
+          <a class="map-link" href="https://maps.app.goo.gl/BhDgjQeoBc8gvVaV8" target="_blank" rel="noopener noreferrer">
+            📍 Abrir ubicación en Google Maps
+          </a>
+          <p class="gift-reminder"><span aria-hidden="true">🎁</span> ¡No olvides traer tu regalo para Rafaella!</p>
+        </div>
+        <p class="lead">¡Tu misión más importante es venir a celebrar, jugar y pasarla increíble!</p>
+        <div class="invite-characters" aria-label="Peach, una estrella y Bowser">
+          <img src="assets/peach-celebrando-recortada.png" alt="Peach celebrando"><img class="invite-star" src="assets/estrella-ui.png" alt=""><img src="assets/bowser-transparente.png" alt="Bowser">
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="rsvpBtn">¡Sí, allí estaré!</button>
+          <button class="btn btn-secondary" id="calendarBtn">Añadir al calendario</button>
+        </div>
+        <p class="note" id="rsvpNote" style="margin-top:14px">La confirmación se abrirá por WhatsApp si se configura el número de contacto.</p>
+      </div>
+      <div class="actions"><button class="btn btn-soft" id="restartBtn">↻ Volver a jugar</button></div>
+    </section>
+  </main>
+</div>
+  <script src="script.js" defer></script>
+</body>
+</html>
