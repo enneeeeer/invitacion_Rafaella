@@ -282,20 +282,14 @@ $("rsvpBtn").addEventListener("click",()=>{
   window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+msg,"_blank","noopener,noreferrer");
 });
 $("calendarBtn").addEventListener("click",()=>{
-  // Hora local de Lima (UTC-5). Evento de 2 horas como duración predeterminada no se incluye:
-  // se crea un evento de 1 hora solo como bloque de calendario editable.
-  const ics=[
-    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Invitacion Rafaella//ES",
-    "CALSCALE:GREGORIAN","BEGIN:VEVENT",
-    "UID:rafaella-birthday-20261121@example.invalid",
-    "DTSTAMP:20261011T120000Z","DTSTART:20261121T163000",
-    "SUMMARY:Cumpleaños de Rafaella",
-    "LOCATION:Círculo Militar",
-    "DESCRIPTION:¡Te esperamos para celebrar el cumpleaños de Rafaella!",
-    "END:VEVENT","END:VCALENDAR"
-  ].join("\r\n");
-  const blob=new Blob([ics],{type:"text/calendar;charset=utf-8"});
-  const url=URL.createObjectURL(blob),a=document.createElement("a");
-  a.href=url;a.download="cumpleanos-rafaella.ics";document.body.appendChild(a);a.click();a.remove();
-  URL.revokeObjectURL(url);
+  const calendarUrl=new URL("https://calendar.google.com/calendar/render");
+  calendarUrl.search=new URLSearchParams({
+    action:"TEMPLATE",
+    text:"Cumpleaños de Rafaella",
+    dates:"20261121T163000/20261121T173000",
+    ctz:"America/Lima",
+    details:"¡Te esperamos para celebrar el cumpleaños de Rafaella!",
+    location:"Círculo Militar de Chorrillos"
+  }).toString();
+  window.open(calendarUrl.toString(),"_blank","noopener,noreferrer");
 });

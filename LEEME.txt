@@ -12,6 +12,8 @@ Para publicar y compartir por enlace, sube los archivos de la página y también
 
 Imágenes: la página usa PNG recortados y con transparencia en la carpeta assets (peach-celebrando-recortada.png, bowser-transparente.png y estrella-ui.png) para mostrar los personajes y las estrellas. Si una imagen de personaje no carga, se mostrará un emoji de reemplazo.
 
-WhatsApp: en script.js puedes configurar WHATSAPP_NUMBER con el número de contacto (código de país y solo dígitos). Se dejó vacío porque no se proporcionó.
+WhatsApp: en script.js puedes configurar WHATSAPP_NUMBER con el número de contacto (código de país y solo dígitos).
 
 Ubicación: en index.html puedes reemplazar el enlace del botón "Abrir ubicación en Google Maps" por el enlace exacto de Google Maps del lugar. Por ahora abre una búsqueda de "Círculo Militar".
+
+Calendario: el botón "Reservar fecha en Google Calendar" abre el evento con fecha, hora y lugar preparados para guardarlo; no descarga archivos.
